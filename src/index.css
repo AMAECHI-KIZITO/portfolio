@@ -1,0 +1,284 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #242424;
+  color: #C9DAEA;
+}
+
+#nav_links{
+  text-align:center;
+}
+
+#nav_links li{
+  display:inline-block;
+  border-radius: 25px;
+  border: none;
+  padding: 10px;
+  line-height: 10px;
+  margin:5px;
+}
+
+.big-screens-intro h1 {
+  font-size: 75px;
+  font-weight: bolder;
+}
+
+.big-screens-intro p {
+  font-size: 35px;
+  font-weight: bolder;
+}
+
+.big-screens-intro a {
+  font-size: 35px;
+  font-weight: bolder;
+}
+
+.small-screens-intro h1{
+  font-size: 40px;
+  font-weight: bolder;
+}
+
+.small-screens-intro p{
+  font-size: 20px;
+  font-weight: bolder;
+}
+
+.small-screens-intro a {
+  font-size: 20px;
+  font-weight: bolder;
+}
+
+.img-thumbnail {
+  width: 350px;
+  height: 350px; 
+  object-fit: contain;
+}
+
+
+.testimonial-card {
+  background-color: #1e293b; 
+  border-radius: 10px;
+  padding: 30px;
+  display: flex;
+  align-items: flex-start; 
+  gap: 20px;
+  max-width: 1130px; 
+  margin: 20px auto; 
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); 
+}
+
+.profile-icon {
+  width: 60px; /* Adjust size as needed */
+  height: 60px;
+  border-radius: 50%;
+  overflow: hidden; /* Ensure image stays within the circle */
+  background-color: #334155; /* Placeholder background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.profile-icon img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover; /* Ensure image covers the circle without distortion */
+}
+
+.testimonial-content {
+  color: #f8fafc; /* Light text color, adjust as needed */
+}
+
+.name {
+  font-size: 1.5em;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #198753; /* Highlight color for the name, adjust as needed */
+}
+
+.wave {
+  font-size: 1em; /* Adjust wave size */
+}
+
+.quote {
+  font-style: italic;
+  margin-bottom: 15px;
+  line-height: 1.6;
+  color: #cbd5e1; /* Slightly lighter text for the quote */
+}
+
+.experience {
+  line-height: 1.5;
+  color: #e2e8f0; /* Another shade of light text */
+}
+
+.experience strong,
+.experience em {
+  font-weight: bold;
+  font-style: normal;
+  color: #a7f3d0;
+}
+
+.skills-container {
+  display: flex;
+  overflow-x: auto; /* Enable horizontal scrolling */
+  gap: 15px; /* Spacing between skill items */
+  padding-bottom: 15px; /* Add some padding to accommodate potential scrollbar */
+}
+
+.skill-item {
+  min-width: 80px; /* Minimum width of each item */
+  height: 80px; /* Fixed height for the items */
+  flex-shrink: 0; /* Prevent items from shrinking */
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15); /* Optional shadow */
+}
+
+.skill-item img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain; /* Ensure the logo fits within the container */
+  filter: grayscale(100%); /* Optional: Make logos grayscale */
+  opacity: 0.8; /* Optional: Slightly reduce opacity */
+  transition: opacity 0.3s ease-in-out, filter 0.3s ease-in-out;
+}
+
+.skill-item-small-screens {
+  background-color: #334155; /* Darker background for skill items */
+  border-radius: 8px;
+  padding: 15px;
+  min-width: 80px; /* Minimum width of each item */
+  height: 80px; /* Fixed height for the items */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0; /* Prevent items from shrinking */
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15); /* Optional shadow */
+}
+
+.skill-item-small-screens img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain; /* Ensure the logo fits within the container */
+  filter: grayscale(100%); /* Optional: Make logos grayscale */
+  opacity: 0.8; /* Optional: Slightly reduce opacity */
+  transition: opacity 0.3s ease-in-out, filter 0.3s ease-in-out;
+}
+
+.skill-item:hover img {
+  opacity: 1; /* Increase opacity on hover */
+  filter: grayscale(0%); /* Remove grayscale on hover */
+}
+
+/* Optional: Style the scrollbar for WebKit browsers (Chrome, Safari) */
+.skills-container::-webkit-scrollbar {
+  height: 8px;
+}
+
+.skills-container::-webkit-scrollbar-thumb {
+  background-color: #475569;
+  border-radius: 4px;
+}
+
+.skills-container::-webkit-scrollbar-track {
+  background-color: #2c3e50;
+  border-radius: 4px;
+}
+
+/* Optional: Style the scrollbar for Firefox */
+.skills-container {
+  scrollbar-width: thin;
+  scrollbar-color: #475569 #2c3e50;
+}
+
+.menu {
+  display: flex;
+  justify-content: center; /* Centers icons horizontally */
+  align-items: center; /* Centers icons vertically */
+  gap: 40px; /* Space between icons */
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center; /* Centers icons horizontally */
+  align-items: center; /* Centers icons vertically */
+  gap: 40px; /* Space between icons */
+}
+
+.social-icons a {
+  width: 56px; /* Width of the oval */
+  height: 56px; /* Height of the oval */
+  border-radius: 50%; /* Makes it a circle initially */
+  background-color: #000; /* Black background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px; /* Size of the social media icon */
+  color: #64ffda; /* Neon green color */
+  transition: transform 0.2s ease-in-out; /* Smooth transition */
+  transform: scale(1);
+}
+
+.social-icons a:hover {
+  transform: scale(1.1); /* Slight scale on hover */
+}
+
+/* Make the ovals */
+.social-icons a {
+  border-radius: 56px; /* Make it an oval by using the height */
+}
+
+i:hover {
+  color: #198753;
+}
+
+a {
+  text-decoration: none;
+  color: #C9DAEA;
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+  .social-icons {
+    gap: 16px; /* Adjust spacing for smaller screens */
+  }
+  .social-icons a {
+    width: 48px;
+    height: 48px;
+    font-size: 20px;
+  }
+  .social-icons a {
+    border-radius: 48px;
+  }
+}
+
+/* Optional: Responsive adjustments */
+@media (max-width: 500px) {
+  .testimonial-card {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .profile-icon {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 15px;
+  }
+
+  .name {
+    font-size: 1.3em;
+  }
+}
+
+@media (max-width: 480px) {
+  .social-icons {
+    gap: 12px; /* Further adjust spacing */
+  }
+  .social-icons a {
+    width: 40px;
+    height: 40px;
+    font-size: 16px;
+  }
+   .social-icons a {
+    border-radius: 40px;
+  }
+}
