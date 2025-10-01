@@ -29,14 +29,14 @@ function Home() {
         <div className='col-md-7 big-screens-intro d-none d-lg-block my-md-3'>
           <h1 id='introduction'>Hi, I'm Tochukwu ⚡️</h1>
           <p id='profession_definition' className='text-right'>Software Engineer - Backend</p>
-          <a className='btn btn-outline-success' href='https://drive.google.com/file/d/1xOgEBoSqpOc-3y3V_dnVGvSonJvqpCX1/view?usp=sharing'>My Resume</a>
+          <a className='btn btn-outline-success' href='https://drive.google.com/file/d/1vP5OCrUhr9WmOFB6-6r9-RRBPgY1sPGk/view?usp=sharing'>My Resume</a>
         </div>
 
         {/* Seen on small screens */}
         <div className='col-md-7 small-screens-intro d-lg-none py-4 text-center'>
           <h1 id='introduction'>Hi, I'm Tochukwu ⚡️</h1>
           <p id='profession_definition'>Software Engineer - Backend</p>
-          <a className='btn btn-outline-success' href='https://drive.google.com/file/d/1xOgEBoSqpOc-3y3V_dnVGvSonJvqpCX1/view?usp=sharing'>My Resume</a>
+          <a className='btn btn-outline-success' href='https://drive.google.com/file/d/1vP5OCrUhr9WmOFB6-6r9-RRBPgY1sPGk/view?usp=sharing'>My Resume</a>
         </div>
       </div>
 
