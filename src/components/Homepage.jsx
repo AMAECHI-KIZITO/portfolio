@@ -1,9 +1,12 @@
-import { useState } from 'react'
+import { useState, useEffect, useRef } from 'react';
+import { Terminal, Shield, Lock, ShieldAlert, Cpu, Globe, Code, ChevronRight, Activity } from 'lucide-react';
+import '../index.css'
 import Navigation from "../includes/nav"
 import Footer from "../includes/footer"
-import '../index.css'
 import Amaechi from "../images/Amaechi.jpeg";
 import tochukwu from "../images/tochukwu.png"
+import tochukwu_xavi_stance from "../images/tochukwu_xavi_stance.jpeg";
+import tochukwu_bridge from "../images/tochukwu_bridge.jpeg";
 import js from "../images/js.png"
 import python from "../images/python.png"
 import pythonFlask from "../images/pythonFlask.png"
@@ -15,21 +18,165 @@ import campaigngpt from "../images/campaigngpt.png"
 import THC from "../images/THC.jpeg"
 import chrisllan from "../images/chrisllan.jpeg"
 
+
 function Home() {
+  const [terminalOutput, setTerminalOutput] = useState([
+    { type: 'system', text: 'Initializing secure connection...' },
+    { type: 'system', text: 'Authentication successful. Welcome, Operator.' },
+    { type: 'info', text: 'Type "help" to see available commands.' }
+  ]);
+  const [inputValue, setInputValue] = useState('');
+  const terminalEndRef = useRef(null);
+
+  const commands = {
+    help: 'Available commands: whoami, skills, clear, status, contact',
+    whoami: 'Backend Engineer | Cybersecurity Engineer',
+    skills: 'Python, Bash, Kali Linux, AWS Security, Docker, Kubernetes, OWASP Top 10',
+    status: 'System Integrity: 100% | Active Firewalls: 4 | Threats Neutralized: 1,402',
+    contact: 'Encrypted tunnel established: thisisamaechi@gmail.com',
+  };
+
+  const handleCommand = (e) => {
+    if (e.key === 'Enter') {
+      const cmd = inputValue.toLowerCase().trim();
+      const newOutput = [...terminalOutput, { type: 'user', text: `> ${inputValue}` }];
+
+      if (commands[cmd]) {
+        newOutput.push({ type: 'success', text: commands[cmd] });
+      } else if (cmd === 'clear') {
+        setTerminalOutput([{ type: 'system', text: 'Terminal cleared.' }]);
+        setInputValue('');
+        return;
+      } else {
+        newOutput.push({ type: 'error', text: `Command not found: ${cmd}` });
+      }
+
+      setTerminalOutput(newOutput);
+      setInputValue('');
+    }
+  };
+
+  useEffect(() => {
+    terminalEndRef.current?.scrollIntoView({ behavior: 'smooth' });
+  }, [terminalOutput]);
+
   return (
     <>
       <Navigation/>
 
       {/* Welcome Banner */}
-      <div className='row focus-area my-5 align-items-center'>
+      <div className='row focus-area my-5 align-items-start'>
         <div className='col-md-5 text-center'>
-          <span><img src={tochukwu} alt='Tochukwu Amaechi Photograph' className='img-fluid img-thumbnail'/></span>
+          <span>
+            <img src={tochukwu_xavi_stance} alt='Tochukwu Amaechi Photograph' className='img-fluid img-thumbnail'/>
+          </span>
+
+          <h1 id='introduction' className="my-3  d-none d-lg-block">
+            Hi, I'm Tochukwu ⚡️
+          </h1>
+
+          {/* <p id='profession_definition' className='text-muted lead mb-3  d-none d-lg-block'>
+            Software Engineer — <span className="text-emerald-500 font-mono">Backend</span>
+          </p> */}
+          <p id='profession_definition' className='text-muted lead mb-3  d-none d-lg-block'>
+            Backend Engineer | <span className="text-emerald-500 font-mono">Cybersecurity Engineer</span>
+          </p>
+
+          <a className='btn btn-outline-success px-4 mb-4 d-none d-lg-inline-block' href='https://drive.google.com/file/d/1vP5OCrUhr9WmOFB6-6r9-RRBPgY1sPGk/view?usp=sharing'>
+            My Resume
+          </a>
         </div>
 
-        <div className='col-md-7 big-screens-intro d-none d-lg-block my-md-3'>
-          <h1 id='introduction'>Hi, I'm Tochukwu ⚡️</h1>
-          <p id='profession_definition' className='text-right'>Software Engineer - Backend</p>
-          <a className='btn btn-outline-success' href='https://drive.google.com/file/d/1vP5OCrUhr9WmOFB6-6r9-RRBPgY1sPGk/view?usp=sharing'>My Resume</a>
+        {/* Introduction & Terminal Column */}
+        <div className='col-md-7 big-screens-intro d-none d-lg-block'>
+          {/* AUTHENTIC TERMINAL */}
+          <div className="position-relative overflow-hidden rounded shadow-2xl border border-secondary" 
+              style={{ 
+                backgroundColor: '#0c0c0d', 
+                height: '400px',
+                fontFamily: '"Fira Code", "Courier New", monospace' 
+              }}>
+            
+            {/* CRT Scanline Overlay */}
+            <div className="position-absolute w-100 h-100" 
+                style={{
+                  background: 'repeating-linear-gradient(0deg, rgba(0,0,0,0.15) 0px, rgba(0,0,0,0.15) 1px, transparent 1px, transparent 2px)',
+                  opacity: 0.1,
+                  pointerEvents: 'none',
+                  zIndex: 10
+                }}>
+            </div>
+
+            {/* Terminal Header */}
+            <div className="d-flex align-items-center justify-content-between px-3 py-2" 
+                style={{ 
+                  backgroundColor: '#1a1a1e', 
+                  borderBottom: '1px solid rgba(255,255,255,0.05)',
+                  position: 'relative',
+                  zIndex: 20
+                }}>
+              <div className="d-flex" style={{ gap: '8px' }}>
+                <div style={{ width: '12px', height: '12px', borderRadius: '50%', backgroundColor: '#ff5f56' }}></div>
+                <div style={{ width: '12px', height: '12px', borderRadius: '50%', backgroundColor: '#ffbd2e' }}></div>
+                <div style={{ width: '12px', height: '12px', borderRadius: '50%', backgroundColor: '#27c93f' }}></div>
+              </div>
+              <div className="text-muted text-uppercase font-weight-bold" 
+                  style={{ 
+                    fontSize: '11px', 
+                    letterSpacing: '1px',
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '6px'
+                  }}>
+                <Terminal size={14} /> 
+                <span>Tochukwu Amaechi Kizito— 80X24</span>
+              </div>
+              <div style={{ width: '36px' }}></div>
+            </div>
+            
+            {/* Terminal Content Area */}
+            <div className="p-4 overflow-auto" 
+                style={{ 
+                  fontSize: '13px', 
+                  lineHeight: '1.6',
+                  height: 'calc(100% - 42px)',
+                  position: 'relative',
+                  zIndex: 5
+                }}>
+              {terminalOutput.map((out, i) => (
+                <div key={i} className={`mb-1 ${
+                  out.type === 'system' ? 'text-primary' : 
+                  out.type === 'success' ? 'text-success' : 
+                  out.type === 'error' ? 'text-danger' : 'text-white-50'
+                }`}>
+                  {out.type !== 'user' && <span className="mr-2" style={{ opacity: 0.5 }}>::</span>}
+                  {out.text}
+                </div>
+              ))}
+              
+              {/* Input Line */}
+              <div className="d-flex align-items-center mt-2">
+                <span className="text-success font-weight-bold mr-2">➜</span>
+                <span className="text-info mr-2">~</span>
+                <input 
+                  type="text" 
+                  autoFocus
+                  value={inputValue}
+                  onChange={(e) => setInputValue(e.target.value)}
+                  onKeyDown={handleCommand}
+                  className="flex-fill"
+                  style={{
+                    backgroundColor: 'transparent',
+                    border: 'none',
+                    outline: 'none',
+                    color: '#10b981',
+                    caretColor: '#10b981'
+                  }}
+                />
+              </div>
+              <div ref={terminalEndRef} />
+            </div>
+          </div>
         </div>
 
         {/* Seen on small screens */}
