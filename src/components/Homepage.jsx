@@ -22,7 +22,7 @@ import chrisllan from "../images/chrisllan.jpeg"
 function Home() {
   const [terminalOutput, setTerminalOutput] = useState([
     { type: 'system', text: 'Initializing secure connection...' },
-    { type: 'system', text: 'Authentication successful. Welcome, Operator.' },
+    { type: 'system', text: 'Authentication successful. Welcome, Visitor.' },
     { type: 'info', text: 'Type "help" to see available commands.' }
   ]);
   const [inputValue, setInputValue] = useState('');
@@ -155,15 +155,17 @@ function Home() {
                   out.type === 'success' ? 'text-success' : 
                   out.type === 'error' ? 'text-danger' : 'text-white-50'
                 }`}>
-                  {out.type !== 'user' && <span className="mr-2" style={{ opacity: 0.5 }}>::</span>}
+                  {out.type !== 'user' && <span className="mr-2" style={{ opacity: 0.5 }}></span>}
                   {out.text}
                 </div>
               ))}
               
               {/* Input Line */}
               <div className="d-flex align-items-center mt-2">
-                <span className="text-success font-weight-bold mr-2">➜</span>
-                <span className="text-info mr-2">~</span>
+                <span className="text-success">visitor@sec-terminal</span>
+                <span className="text-white">:</span>
+                <span className="text-info">~</span>
+                <span className="text-white">$</span>
                 <input 
                   type="text" 
                   autoFocus
