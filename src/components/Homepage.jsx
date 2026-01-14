@@ -14,8 +14,8 @@ import MongoDB from "../images/MongoDB.png"
 import MySQLDB from "../images/MySQLDB.png"
 import Azure from "../images/Azure.png"
 import datae from "../images/datae.png"
-import campaigngpt from "../images/campaigngpt.png"
-import THC from "../images/THC.jpeg"
+import new_campaigngpt from "../images/new_campaigngpt.png"
+import WellWallet from "../images/WellWallet.png"
 import chrisllan from "../images/chrisllan.jpeg"
 
 
@@ -29,10 +29,13 @@ function Home() {
   const terminalEndRef = useRef(null);
 
   const commands = {
-    help: 'Available commands: whoami, skills, clear, status, contact',
+    help: 'Available commands: whoami, programming_languages, programming_languages_frameworks, databases, cybersec_skills, clear, status, contact',
     whoami: 'Backend Engineer | Cybersecurity Engineer',
-    skills: 'Python, Bash, Kali Linux, AWS Security, Docker, Kubernetes, OWASP Top 10',
-    status: 'System Integrity: 100% | Active Firewalls: 4 | Threats Neutralized: 1,402',
+    cybersec_skills: 'Python, API Security, Kali Linux, Cloud Security, Network Access Control, OSI Layer Security, EDR | XDR',
+    programming_languages: 'Python, JavaScript, Node JS',
+    programming_languages_frameworks: 'Python Flask, Express JS',
+    databases: 'MySQL, MongoDB, PostgreSQL, Mongoose, SQLAlchemy',
+    status: 'System Integrity: 100%',
     contact: 'Encrypted tunnel established: thisisamaechi@gmail.com',
   };
 
@@ -79,11 +82,14 @@ function Home() {
             Software Engineer — <span className="text-emerald-500 font-mono">Backend</span>
           </p> */}
           <p id='profession_definition' className='text-muted lead mb-3  d-none d-lg-block'>
-            Backend Engineer | <span className="text-emerald-500 font-mono">Cybersecurity Engineer</span>
+            Backend & <span className="text-emerald-500 font-mono">Cybersecurity Engineer</span>
           </p>
 
           <a className='btn btn-outline-success px-4 mb-4 d-none d-lg-inline-block' href='https://drive.google.com/file/d/1vP5OCrUhr9WmOFB6-6r9-RRBPgY1sPGk/view?usp=sharing'>
-            My Resume
+            Software Resume
+          </a>
+          <a className='btn btn-outline-success px-4 mb-4 d-none d-lg-inline-block ms-2' href='https://drive.google.com/file/d/1vP5OCrUhr9WmOFB6-6r9-RRBPgY1sPGk/view?usp=sharing'>
+            Cybersecurity Resume
           </a>
         </div>
 
@@ -182,8 +188,9 @@ function Home() {
         {/* Seen on small screens */}
         <div className='col-md-7 small-screens-intro d-lg-none py-4 text-center'>
           <h1 id='introduction'>Hi, I'm Tochukwu ⚡️</h1>
-          <p id='profession_definition'>Software Engineer - Backend</p>
-          <a className='btn btn-outline-success' href='https://drive.google.com/file/d/1vP5OCrUhr9WmOFB6-6r9-RRBPgY1sPGk/view?usp=sharing'>My Resume</a>
+          <p id='profession_definition'>Cybersecurity & Software Engineer - Backend</p>
+          <a className='btn btn-outline-success' href='https://drive.google.com/file/d/1vP5OCrUhr9WmOFB6-6r9-RRBPgY1sPGk/view?usp=sharing'>Software Resume</a>
+          <a className='btn btn-outline-success mt-1' href='https://drive.google.com/file/d/1vP5OCrUhr9WmOFB6-6r9-RRBPgY1sPGk/view?usp=sharing'>Cybersecurity Resume</a>
         </div>
       </div>
 
@@ -199,105 +206,257 @@ function Home() {
         </div>
       </div>
 
-      {/* Skills For Tablets and Above*/}
-      <div className='row skills-bar my-lg-5 mx-lg-5 d-none d-md-flex' id='Skills'>
-        <div className='col-12 text-center'>
-          <h2 style={{fontWeight:"bolder", fontSize:"35px"}}>SKILLS</h2>
-        <span>Tools I'm comfortable with</span>
-        </div>
-        <div className='col-4 col-md-2 text-center skill-item'>
-          <img src={python} alt="Python logo" className='img img-fluid'/>
-        </div>
-        <div className='col-4 col-md-2 text-center skill-item'>
-          <img src={js} alt="Javascript logo" className='img img-fluid'/>
-        </div>
-        <div className='col-4 col-md-2 text-center skill-item'>
-          <img src={pythonFlask} alt="Flask" className='img img-fluid'/>
-        </div>
-        <div className='col-4 col-md-2 text-center skill-item'>
-          <img src={MongoDB} alt="MongoDB" className='img img-fluid'/>
-        </div>
-        <div className='col-4 col-md-2 text-center skill-item'>
-          <img src={MySQLDB} alt="MySQL" className='img img-fluid'/>
-        </div>
-        <div className='col-4 col-md-2 text-center skill-item'>
-          <img src={Azure} alt="Azure" className='img img-fluid'/>
+      {/* Skills Section - Modern Design */}
+      <div className='container-fluid py-5' id='Skills'>
+        <div className='row justify-content-center'>
+          <div className='col-lg-10'>
+            {/* Section Header */}
+            <div className='text-center mb-5'>
+              <h2 className='font-weight-bold text-white mb-2'>
+                <span className='text-success'>&lt;</span>
+                SKILLS
+                <span className='text-success'>/&gt;</span>
+              </h2>
+              <p className='text-muted font-mono'>// Technologies & Frameworks</p>
+              <div className='mx-auto' style={{ 
+                width: '60px', 
+                height: '3px', 
+                backgroundColor: '#10b981',
+                boxShadow: '0 0 10px #10b981'
+              }}></div>
+            </div>
+
+            {/* Skills Grid */}
+            <div className='row g-4'>
+              {[
+                { img: python, name: 'Python', desc: 'Backend Development' },
+                { img: js, name: 'JavaScript', desc: 'Full Stack' },
+                { img: pythonFlask, name: 'Flask', desc: 'Web Framework' },
+                { img: MongoDB, name: 'MongoDB', desc: 'NoSQL Database' },
+                { img: MySQLDB, name: 'MySQL', desc: 'SQL Database' },
+                { img: Azure, name: 'Azure', desc: 'Cloud Platform' }
+              ].map((skill, index) => (
+                <div key={index} className='col-6 col-md-4 col-lg-2'>
+                  <div 
+                    className='text-center p-4 h-100 rounded border border-secondary position-relative overflow-hidden'
+                    style={{ 
+                      backgroundColor: '#1a1a1e',
+                      transition: 'all 0.3s ease',
+                      cursor: 'pointer'
+                    }}
+                    onMouseEnter={(e) => {
+                      e.currentTarget.style.borderColor = '#10b981';
+                      e.currentTarget.style.backgroundColor = '#242428';
+                      e.currentTarget.style.transform = 'translateY(-5px)';
+                      e.currentTarget.style.boxShadow = '0 8px 20px rgba(16, 185, 129, 0.3)';
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.borderColor = '#6c757d';
+                      e.currentTarget.style.backgroundColor = '#1a1a1e';
+                      e.currentTarget.style.transform = 'translateY(0)';
+                      e.currentTarget.style.boxShadow = 'none';
+                    }}
+                  >
+                    {/* Skill Icon */}
+                    <div className='mb-3'>
+                      <img 
+                        src={skill.img} 
+                        alt={skill.name} 
+                        className='img-fluid'
+                        style={{ 
+                          height: '60px',
+                          width: 'auto',
+                          filter: 'grayscale(30%)'
+                        }}
+                      />
+                    </div>
+                    
+                    {/* Skill Name */}
+                    <h6 className='text-white font-weight-bold mb-1'>{skill.name}</h6>
+                    <small className='text-muted font-mono' style={{ fontSize: '11px' }}>
+                      {skill.desc}
+                    </small>
+
+                    {/* Decorative Corner */}
+                    <div 
+                      className='position-absolute'
+                      style={{
+                        top: 0,
+                        right: 0,
+                        width: '20px',
+                        height: '20px',
+                        borderTop: '2px solid #10b981',
+                        borderRight: '2px solid #10b981',
+                        opacity: 0.3
+                      }}
+                    ></div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
       </div>
 
-      {/* Skills For Smaller Screens below Tablets*/}
-      <div className="skills-bar d-md-none py-4" id='skills'>
-        <h2 className='text-center' style={{fontWeight:"bolder"}}>SKILLS</h2>
-        <div className="skills-container">
-          <div className="skill-item-small-screens">
-            <img src={python} alt="Python logo"/>
-          </div>
-          <div className="skill-item-small-screens">
-            <img src={js} alt="Javascript logo"/>
-          </div>
-          <div className="skill-item-small-screens">
-            <img src={pythonFlask} alt="Flask"/>
-          </div>
-          <div className="skill-item-small-screens">
-            <img src={MongoDB} alt="MongoDB"/>
-          </div>
-          <div className="skill-item-small-screens">
-            <img src={MySQLDB} alt="MySQL"/>
-          </div>
-          <div className="skill-item-small-screens">
-            <img src={Azure} alt="Azure"/>
-          </div>
-        </div>
-      </div>
-
-
-      {/* Projects Section */}
-      <div className='row projects-area mx-lg-5' id='myProjects'>
-        <div className='col-12 py-3 text-center'>
-          <h2 style={{fontWeight:"bolder"}}>PROJECTS</h2>
-          <span>A few selected projects i've been involved in</span>
-        </div>
-
-        <div className='col-md-4'>
-          <div className="card" style={{width: "100%", backgroundColor:"#242424"}}>
-            <img src={datae} className="card-img-top img-thumbnail" alt="Datae image" style={{width: "100%", height:"75%", backgroundColor:"#242424"}}/>
-            <div className="card-body">
-              <h5 className="card-title">Datae</h5>
-              <p className="card-text">Datae is a Dubai data technology company that allows businesses gain insights into their data without the need of a data analyst in just a few clicks.</p>
-              <a href="https://app.datae.ae" className="btn btn-outline-success">Explore</a>
+      {/* Projects Section - Enhanced Cards */}
+      <div className='container-fluid py-5' id='myProjects'>
+        <div className='row justify-content-center'>
+          <div className='col-lg-10'>
+            {/* Section Header */}
+            <div className='text-center mb-5'>
+              <h2 className='font-weight-bold text-white mb-2'>
+                <span className='text-success'>&lt;</span>
+                PROJECTS
+                <span className='text-success'>/&gt;</span>
+              </h2>
+              <p className='text-muted font-mono'>Production-grade solutions I've built and maintained</p>
+              <div className='mx-auto' style={{ 
+                width: '60px', 
+                height: '3px', 
+                backgroundColor: '#10b981',
+                boxShadow: '0 0 10px #10b981'
+              }}></div>
             </div>
-          </div>
-        </div>
 
-        <div className='col-md-4'>
-          <div className="card" style={{width: "100%", backgroundColor:"#242424"}}>
-            <img src={campaigngpt} className="card-img-top img-thumbnail" alt="Campaign GPT" style={{width: "100%", height:"75%", backgroundColor:"#242424"}}/>
-            <div className="card-body">
-              <h5 className="card-title">CampaignGPT</h5>
-              <p className="card-text">CampaignGPT is an AI tool that allows business connnect and chat with their powerbi reports using human languages to gain meaningful insights thus breathing life to data.</p>
-              <a href="https://app.campaigngpt.ai" className="btn btn-outline-success">Explore</a>
-            </div>
-          </div>
-        </div>
+            {/* Projects Grid */}
+            <div className='row g-4'>
+              {[
+                {
+                  img: datae,
+                  title: 'Datae',
+                  desc: 'Datae is a Dubai data technology company that allows businesses gain insights into their data without the need of a data analyst in just a few clicks.',
+                  link: 'https://app.datae.ae',
+                  tags: ['Data Analytics', 'Backend', 'AI']
+                },
+                {
+                  img: new_campaigngpt,
+                  title: 'CampaignGPT',
+                  desc: 'CampaignGPT enables users interact with their Power BI reports using natural language effortlessly with AI-powered conversational analytics.',
+                  link: 'https://campaigngpt.ai',
+                  tags: ['AI', 'Power BI', 'NLP']
+                },
+                {
+                  img: WellWallet,
+                  title: 'WellWallet',
+                  desc: 'WellWallet bridges the gap between pharmacies and patients by helping users get instant discounts on drugs at partner pharmacies near them.',
+                  link: 'https://mywellwallet.com',
+                  tags: ['Healthcare', 'Mobile', 'API']
+                }
+              ].map((project, index) => (
+                <div key={index} className='col-md-6 col-lg-4'>
+                  <div 
+                    className='rounded overflow-hidden h-100 d-flex flex-column border border-secondary'
+                    style={{ 
+                      backgroundColor: '#1a1a1e',
+                      transition: 'all 0.3s ease'
+                    }}
+                    onMouseEnter={(e) => {
+                      e.currentTarget.style.borderColor = '#10b981';
+                      e.currentTarget.style.transform = 'translateY(-10px)';
+                      e.currentTarget.style.boxShadow = '0 15px 30px rgba(16, 185, 129, 0.2)';
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.borderColor = '#6c757d';
+                      e.currentTarget.style.transform = 'translateY(0)';
+                      e.currentTarget.style.boxShadow = 'none';
+                    }}
+                  >
+                    {/* Project Image */}
+                    <div 
+                      className='position-relative overflow-hidden'
+                      style={{ height: '200px', backgroundColor: '#0a0a0a' }}
+                    >
+                      <img 
+                        src={project.img} 
+                        alt={project.title}
+                        className='w-100 h-100'
+                        style={{ 
+                          objectFit: 'cover',
+                          transition: 'transform 0.3s ease'
+                        }}
+                        onMouseEnter={(e) => {
+                          e.currentTarget.style.transform = 'scale(1.05)';
+                        }}
+                        onMouseLeave={(e) => {
+                          e.currentTarget.style.transform = 'scale(1)';
+                        }}
+                      />
+                      
+                      {/* Overlay on hover */}
+                      <div 
+                        className='position-absolute w-100 h-100 d-flex align-items-center justify-content-center'
+                        style={{ 
+                          top: 0, 
+                          left: 0,
+                          backgroundColor: 'rgba(16, 185, 129, 0)',
+                          transition: 'background-color 0.3s ease',
+                          pointerEvents: 'none'
+                        }}
+                        onMouseEnter={(e) => {
+                          e.currentTarget.style.backgroundColor = 'rgba(16, 185, 129, 0.1)';
+                        }}
+                      >
+                      </div>
+                    </div>
 
-        <div className='col-md-4'>
-          <div className="card" style={{width: "100%", backgroundColor:"#242424"}}>
-            <img src={THC} className="card-img-top img-thumbnail" alt="The health cave" style={{width: "100%", height:"75%", backgroundColor:"#242424"}}/>
-            <div className="card-body">
-              <h5 className="card-title">The Health Cave</h5>
-              <p className="card-text">An EMR system that allows onboarded health care facilities effectively manage patients and staff through digitized record management. Gain valuable insights into patients medical history.</p>
-              <a href="#" className="btn btn-outline-success">Explore</a>
-            </div>
-          </div>
-        </div>
+                    {/* Project Content */}
+                    <div className='p-4 flex-grow-1 d-flex flex-column'>
+                      {/* Title */}
+                      <h5 className='text-white font-weight-bold mb-3'>
+                        <span className='text-success mr-2'>&gt; </span>
+                        {project.title}
+                      </h5>
 
-        <div className='col-md-4'>
-          <div className="card" style={{width: "100%", backgroundColor:"#242424"}}>
-            <img src={chrisllan} className="card-img-top img-thumbnail" alt="Chrisllan By Saphy" style={{width: "100%", height:"75%", backgroundColor:"#242424"}}/>
-            <div className="card-body">
-              <h5 className="card-title">Chrisllan By Saphy</h5>
-              <p className="card-text">An online shoe store</p>
-              <a href="#" className="btn btn-outline-success">Explore</a>
+                      {/* Description */}
+                      <p className='text-muted small mb-3 flex-grow-1' style={{ lineHeight: '1.6' }}>
+                        {project.desc}
+                      </p>
+
+                      {/* Tags */}
+                      <div className='d-flex flex-wrap gap-2 mb-3'>
+                        {project.tags.map((tag, tagIndex) => (
+                          <span 
+                            key={tagIndex}
+                            className='badge badge-outline-success px-2 py-1'
+                            style={{
+                              fontSize: '10px',
+                              border: '1px solid #10b981',
+                              color: '#10b981',
+                              backgroundColor: 'rgba(16, 185, 129, 0.1)',
+                              fontFamily: 'monospace',
+                              textTransform: 'uppercase'
+                            }}
+                          >
+                            {tag}
+                          </span>
+                        ))}
+                      </div>
+
+                      {/* Explore Button */}
+                      <a 
+                        href={project.link}
+                        target='_blank'
+                        rel='noopener noreferrer'
+                        className='btn btn-outline-success w-100 font-mono'
+                        style={{
+                          borderWidth: '2px',
+                          transition: 'all 0.3s ease'
+                        }}
+                        onMouseEnter={(e) => {
+                          e.currentTarget.style.backgroundColor = '#10b981';
+                          e.currentTarget.style.color = '#000';
+                        }}
+                        onMouseLeave={(e) => {
+                          e.currentTarget.style.backgroundColor = 'transparent';
+                          e.currentTarget.style.color = '#10b981';
+                        }}
+                      >
+                        ./explore <span className='ml-2'>→</span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
         </div>
