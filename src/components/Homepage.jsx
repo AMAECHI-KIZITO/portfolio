@@ -88,7 +88,7 @@ function Home() {
           <a className='btn btn-outline-success px-4 mb-4 d-none d-lg-inline-block' href='https://drive.google.com/file/d/1vP5OCrUhr9WmOFB6-6r9-RRBPgY1sPGk/view?usp=sharing'>
             Software Resume
           </a>
-          <a className='btn btn-outline-success px-4 mb-4 d-none d-lg-inline-block ms-2' href='https://drive.google.com/file/d/1vP5OCrUhr9WmOFB6-6r9-RRBPgY1sPGk/view?usp=sharing'>
+          <a className='btn btn-outline-success px-4 mb-4 d-none d-lg-inline-block ms-2' href='https://drive.google.com/file/d/1rN9Zq4Hor-tODX2WZ9q-Hg5vCbes4s5m/view?usp=sharing'>
             Cybersecurity Resume
           </a>
         </div>
@@ -190,7 +190,7 @@ function Home() {
           <h1 id='introduction'>Hi, I'm Tochukwu ⚡️</h1>
           <p id='profession_definition'>Cybersecurity & Software Engineer - Backend</p>
           <a className='btn btn-outline-success' href='https://drive.google.com/file/d/1vP5OCrUhr9WmOFB6-6r9-RRBPgY1sPGk/view?usp=sharing'>Software Resume</a>
-          <a className='btn btn-outline-success mt-1' href='https://drive.google.com/file/d/1vP5OCrUhr9WmOFB6-6r9-RRBPgY1sPGk/view?usp=sharing'>Cybersecurity Resume</a>
+          <a className='btn btn-outline-success mt-1' href='https://drive.google.com/file/d/1rN9Zq4Hor-tODX2WZ9q-Hg5vCbes4s5m/view?usp=sharing'>Cybersecurity Resume</a>
         </div>
       </div>
 
